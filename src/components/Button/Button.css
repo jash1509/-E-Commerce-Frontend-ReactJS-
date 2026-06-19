@@ -1,0 +1,100 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  outline: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1f1f2e 0%, #111118 100%);
+  color: #ffffff;
+  border-color: #1f1f2e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2b2b3f 0%, #171722 100%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: #f4f4f7;
+  color: #1a1a24;
+  border-color: #e4e4eb;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #ececf3;
+  border-color: #d8d8e3;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff4d4d 0%, #d63030 100%);
+  color: #ffffff;
+  border-color: #d63030;
+  box-shadow: 0 4px 12px rgba(214, 48, 48, 0.12);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff6666 0%, #e53e3e 100%);
+  box-shadow: 0 6px 16px rgba(214, 48, 48, 0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1a1a24;
+  border-color: #1a1a24;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #1a1a24;
+  color: #ffffff;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-loading {
+  color: transparent !important;
+}
+
+.btn-spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: btn-spin 0.6s linear infinite;
+  position: absolute;
+}
+
+.btn-secondary .btn-spinner,
+.btn-outline .btn-spinner {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: #1a1a24;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

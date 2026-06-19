@@ -1,0 +1,129 @@
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.home-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #ededf2;
+  padding-bottom: 1.5rem;
+}
+
+.home-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.home-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a24;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.home-description {
+  font-size: 0.9rem;
+  color: #707080;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.home-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.home-filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.25rem;
+  border: 1px solid #ededf2;
+  border-radius: 100px;
+  background: #ffffff;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: #535370;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 550;
+}
+
+.filter-btn:hover {
+  border-color: #1a1a24;
+  color: #1a1a24;
+  background-color: #fafafc;
+}
+
+.filter-btn.active {
+  background: #1a1a24;
+  color: #ffffff;
+  border-color: #1a1a24;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .home-title {
+    font-size: 1.6rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+/* No results state styling */
+.no-results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  text-align: center;
+  border: 2px dashed #ededf2;
+  border-radius: 16px;
+  background: #fafafa;
+  padding: 2rem;
+  margin: 1rem 0 3rem;
+}
+
+.no-results-text {
+  color: #707080;
+  font-size: 0.95rem;
+  font-weight: 550;
+}
+
+
