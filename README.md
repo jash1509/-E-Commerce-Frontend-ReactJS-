@@ -77,10 +77,10 @@ src/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/jash1509/-E-Commerce-Frontend-ReactJS-.git
 
 # 2. Navigate into the project
-cd YOUR_REPO_NAME
+cd -E-Commerce-Frontend-ReactJS-
 
 # 3. Install dependencies
 npm install
