@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { getProductImage } from '../../utils/imageMapper';
 import Button from '../Button/Button';
@@ -6,6 +6,7 @@ import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const mappedImage = getProductImage(product);
 
   return (
@@ -36,7 +37,7 @@ const ProductCard = ({ product }) => {
       </Link>
       <div className="product-card-action">
         <Button
-          variant="primary"
+          variant="secondary"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -46,6 +47,19 @@ const ProductCard = ({ product }) => {
           className="product-card-btn"
         >
           Add to Cart
+        </Button>
+        <Button
+          variant="primary"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            addToCart(product);
+            navigate('/cart');
+          }}
+          id={`buy-now-${product.id}`}
+          className="product-card-btn"
+        >
+          Buy Now
         </Button>
       </div>
     </div>

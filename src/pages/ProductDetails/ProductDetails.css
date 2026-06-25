@@ -156,12 +156,16 @@
 
 .details-action-row {
   margin-top: 1.75rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.details-add-btn {
+.details-add-btn,
+.details-buy-btn {
   max-width: 280px;
   font-size: 0.85rem !important;
   padding: 0.85rem 2rem !important;
+  flex: 1;
 }
 
 .details-add-btn.added {

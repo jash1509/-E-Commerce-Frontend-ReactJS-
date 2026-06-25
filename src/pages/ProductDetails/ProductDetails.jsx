@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { fetchProductById } from '../../api/productApi';
 import { useCart } from '../../context/CartContext';
 import { getProductImage } from '../../utils/imageMapper';
@@ -11,6 +11,7 @@ import './ProductDetails.css';
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,6 +38,11 @@ const ProductDetails = () => {
     addToCart(product);
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
+  };
+
+  const handleBuyNow = () => {
+    addToCart(product);
+    navigate('/cart');
   };
 
   if (loading) return <Loader />;
@@ -93,9 +99,17 @@ const ProductDetails = () => {
               className={`details-add-btn ${added ? 'added' : ''}`}
               onClick={handleAddToCart}
               id="add-to-cart-btn"
-              variant={added ? 'secondary' : 'primary'}
+              variant="secondary"
             >
               {added ? '✓ Added to Cart' : 'Add to Cart'}
+            </Button>
+            <Button
+              className="details-buy-btn"
+              onClick={handleBuyNow}
+              id="buy-now-btn"
+              variant="primary"
+            >
+              Buy Now
             </Button>
           </div>
         </div>

@@ -108,10 +108,13 @@
 
 .product-card-action {
   padding: 0 1.25rem 1.25rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .product-card-btn {
   font-size: 0.75rem !important;
   padding: 0.6rem !important;
+  flex: 1;
 }
 
